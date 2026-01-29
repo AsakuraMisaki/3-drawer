@@ -1,0 +1,8 @@
+[gd_resource type="VisualShader" format=3 uid="uid://jfbjrulosogk"]
+
+[resource]
+flags/depth_test_disabled = true
+flags/unshaded = true
+flags/wireframe = true
+stencil/reference = 4
+nodes/vertex/0/position = Vector2(860, 120)

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://xf15mlf5nusp"]
+
+[node name="Manager" type="Node3D" unique_id=955810439]
+
+[node name="render_mode" type="Node3D" parent="." unique_id=1555649675]
+
+[node name="layer_manager" type="Node3D" parent="." unique_id=634068349]

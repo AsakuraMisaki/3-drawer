@@ -1,0 +1,13 @@
+<Project Sdk="Godot.NET.Sdk/4.6.0">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net9.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <RootNamespace>drawer</RootNamespace>
+    <RestoreSources>
+      https://api.nuget.org/v3/index.json;
+      C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\;
+      $(RestoreSources)  <!-- 保留其他现有源 -->
+    </RestoreSources>
+  </PropertyGroup>
+</Project>

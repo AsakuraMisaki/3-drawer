@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://fogtc7emew0n"]
+
+[ext_resource type="Script" uid="uid://bb3snatnahnua" path="res://scripts/MainScene.cs" id="1_14v1q"]
+[ext_resource type="Material" uid="uid://c303cxy06vq43" path="res://mat/wireframe.tres" id="2_bexkb"]
+[ext_resource type="PackedScene" uid="uid://dwneh0otp1c77" path="res://part_cam.tscn" id="2_l4ml4"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_l4ml4"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_14v1q"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2lt8x"]
+
+[sub_resource type="Sky" id="Sky_14v1q"]
+sky_material = SubResource("ProceduralSkyMaterial_2lt8x")
+
+[sub_resource type="Environment" id="Environment_l4ml4"]
+background_mode = 2
+background_energy_multiplier = 2.5
+sky = SubResource("Sky_14v1q")
+ambient_light_color = Color(1, 1, 1, 1)
+
+[node name="Node3D" type="Node3D" unique_id=1354964714 node_paths=PackedStringArray("MainCamera", "MeshPreview")]
+script = ExtResource("1_14v1q")
+MainCamera = NodePath("")
+MeshPreview = NodePath("MeshInstance3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=346842151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.786078, -0.57164305, 0.4598348)
+mesh = SubResource("CapsuleMesh_l4ml4")
+surface_material_override/0 = ExtResource("2_bexkb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=666971703]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1789819812]
+shape = SubResource("SphereShape3D_14v1q")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1228465185]
+environment = SubResource("Environment_l4ml4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1701748020]
+
+[node name="Button" type="Button" parent="." unique_id=181995853]
+offset_left = 15.0
+offset_top = 14.0
+offset_right = 73.0
+offset_bottom = 63.0
+
+[node name="CheckButton" type="CheckButton" parent="." unique_id=1980259478]
+offset_left = 22.0
+offset_top = 27.0
+offset_right = 66.0
+offset_bottom = 51.0
+
+[node name="PartCam" parent="." unique_id=1992255648 instance=ExtResource("2_l4ml4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11544418, 0.52571464, 0.6759186)
